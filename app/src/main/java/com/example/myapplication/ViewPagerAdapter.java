@@ -73,7 +73,6 @@ public class ViewPagerAdapter extends PagerAdapter {
                 pdialog = Utilss.showSweetLoader(context, SweetAlertDialog.PROGRESS_TYPE, "Submitting...");
 
                 items2 = new ArrayList<>();
-//                items.clear();
                 com.android.volley.RequestQueue queue = Volley.newRequestQueue(context);
                 String url = "http://api.surveymenu.dwtdemo.com/api/products/{id}?id=" +items_id;
 
@@ -89,7 +88,6 @@ public class ViewPagerAdapter extends PagerAdapter {
 
                             for (int i = 0; i < jsonArray.length(); i++)
                             {
-//                                items.clear();
                                 JSONObject jsonObject2 = new JSONObject(String.valueOf(jsonArray.get(i)));
                                 Product_Image dataObject = new Product_Image();
 
@@ -175,11 +173,8 @@ public class ViewPagerAdapter extends PagerAdapter {
     @Override
     public Object instantiateItem(ViewGroup container, final int position) {
 
-//        LocalBroadcastManager.getInstance(context).registerReceiver(mMessageReceiver, new IntentFilter("custom-message2"));
         final Product_Image item = items.get(position);
-
         layoutInflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-
         View view = layoutInflater.inflate(R.layout.custom_layout, null);
 
 
@@ -201,28 +196,4 @@ public class ViewPagerAdapter extends PagerAdapter {
         vp.removeView(view);
 
     }
-
-
-//    public BroadcastReceiver mMessageReceiver = new BroadcastReceiver() {
-//        @Override
-//        public void onReceive(Context context, Intent intent) {
-//
-////           int ItemName = intent.getIntExtra("ValueId2", 0);
-////           Log.d("ItemName123", "" + ItemName);
-//
-//
-//            if(ACTION_INTENT2.equals(intent.getAction()))
-//            {
-//                           int ItemName = intent.getIntExtra("ValueId2", 0);
-//                           Log.d("ItemName123", "" + ItemName);
-//
-//                //DO
-//            }
-//
-//
-//        }
-//    };
-
-
-
 }

@@ -39,13 +39,5 @@ public class MainCategories_Pojo {
     }
     public void setSubCategory(int SubCategory) { this.SubCategory = SubCategory;;
 
-//    public String set() {
-//        return Category;
-//    }
-
-
-
-
-
     }
 }

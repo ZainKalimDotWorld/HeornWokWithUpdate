@@ -37,18 +37,6 @@ public class ThankuActivity extends AppCompatActivity {
 
             textView1234 = findViewById(R.id.textView1234);
 
-
-//            if (Feedback_Menu.swToggle.isOn())
-//            {
-//                textView1234.setText("شكراً لك على ملاحظاتك القيمة، قم بزيارتنا مرة أخرى");
-//            }
-//
-//            else
-//            {
-//
-//                textView1234.setText("Thank you for your valuable feedback. Visit us again..");
-//            }
-
             new Handler().postDelayed(new Runnable() {
                 @Override
                 public void run() {
@@ -85,21 +73,9 @@ public class ThankuActivity extends AppCompatActivity {
                 public void run() {
                     final Intent mainIntent = new Intent(ThankuActivity.this, Value_Feedback.class);
                     startActivity(mainIntent);
-//                    finish();
                 }
             }, 5000);
-
         }
-
-
-
-
-
-//        Bools = getIntent().getExtras().getBoolean("Bools");
-//        Log.e("Bool_Value3", ""+Bools);
-
-
-
 
     }
 
@@ -141,8 +117,6 @@ public class ThankuActivity extends AppCompatActivity {
     }
 
     public void onBackPressed() {
-//        Intent intent = new Intent(Product_Detail.this, ProductsActivity.class);
-//        finish();
-//        startActivity(intent);
+
     }
 }

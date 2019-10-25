@@ -9,13 +9,6 @@ public class Item {
     private String Image;
     private float Price;
 
-
-
-//    public Item(String name, int drawable) {
-//        this.drawable = drawable;
-//        this.name = name;
-//    }
-
     public int getID() {
         return ID;
     }

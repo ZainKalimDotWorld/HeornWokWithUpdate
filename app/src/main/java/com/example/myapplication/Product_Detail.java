@@ -106,9 +106,6 @@ public class Product_Detail extends BaseActivity implements DroidListener {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-//        setContentView(R.layout.activity_product__detail);
-
-
 
         if (MainActivity.orientation==Configuration.ORIENTATION_PORTRAIT)
         {
@@ -127,10 +124,6 @@ public class Product_Detail extends BaseActivity implements DroidListener {
             Log.d("Category_id", "" + Category_Id);
 
             Log.d("Category_Idss" , ""+Category_Id);
-//            swToggle = findViewById(R.id.iv_toggle);
-
-//            toggle2 = getIntent().getExtras().getBoolean("ValueBool2");
-//            Log.d("Toggl_Values" , ""+toggle2);
 
             textView_1 = findViewById(R.id.textView_1);
             textView_2 = findViewById(R.id.textView_2);
@@ -149,68 +142,12 @@ public class Product_Detail extends BaseActivity implements DroidListener {
                 public void onClick(View v) {
 
                     Intent intent = new Intent(Product_Detail.this , ProductsActivity.class);
-//                    intent.putExtra("Third_Second" , swToggle.isOn());
-//                    Log.d("Toggle_Value3" , ""+swToggle.isOn());
                     startActivity(intent);
-
-//                    finish();
-
                 }
             });
 
-//            swToggle.setOnToggledListener(new OnToggledListener() {
-//                @Override
-//                public void onSwitched(LabeledSwitch labeledSwitch, boolean isOn) {
-//                    // Implement your switching logic here
-//
-//                    if (!isOn)
-//                    {
-//                        loadotherdataportrait();
-////                        showdatainarabic();
-//                    }
-//                    else {
-//                        showdatainarabicportrait();
-//
-//                    }
-//                }
-//            });
-
-
-
-
-
-
-
-//            if (toggle2)
-//            {
-//
-//                showdatainarabicportrait();
-//                swToggle.setOn(true);
-//            }
-//
-//            else
-//            {
-//                loadotherdataportrait();
-//                swToggle.setOn(false);
-////            swToggle.(true);
-////            swToggle.setLabelOn("EN");
-//
-//            }
-
-
-
-
-
-
-
-
-//        image = findViewById(R.id.image);
-
-
             items = new ArrayList<>();
             items2=new ArrayList<>();
-
-//        pDialog = Utilss.showSweetLoader(Product_Detail.this, SweetAlertDialog.PROGRESS_TYPE, "Fetching Data...");
 
             recyclerView = (RecyclerView) findViewById(R.id.recycler_view);
             LocalBroadcastManager.getInstance(this).registerReceiver(mMessageReceiver, new IntentFilter("custom-message"));
@@ -250,14 +187,6 @@ public class Product_Detail extends BaseActivity implements DroidListener {
 
         }
 
-
-
-
-
-
-
-
-
         else {
             this.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
             setContentView(R.layout.activity_product__details);
@@ -273,11 +202,6 @@ public class Product_Detail extends BaseActivity implements DroidListener {
             Log.d("Category_id", "" + Category_Id);
 
             Log.d("Category_Idss", "" + Category_Id);
-//            swToggle = findViewById(R.id.iv_toggle);
-
-//            toggle2 = getIntent().getExtras().getBoolean("ValueBool2");
-//            Log.d("Toggl_Values", "" + toggle2);
-
             textView_1 = findViewById(R.id.textView_1);
             textView_2 = findViewById(R.id.textView_2);
             textView_34 = findViewById(R.id.textView_34);
@@ -292,15 +216,8 @@ public class Product_Detail extends BaseActivity implements DroidListener {
             imageView2.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-
-
                     Intent intent = new Intent(Product_Detail.this, ProductsActivity.class);
-//                    intent.putExtra("Third_Second", swToggle.isOn());
-//                    Log.d("Toggle_Value3", "" + swToggle.isOn());
                     startActivity(intent);
-
-//                    finish();
-
                 }
             });
 
@@ -316,43 +233,9 @@ public class Product_Detail extends BaseActivity implements DroidListener {
                 imageView2.setText("Back");
                 loadotherdata();
             }
-//            swToggle.setOnToggledListener(new OnToggledListener() {
-//                @Override
-//                public void onSwitched(LabeledSwitch labeledSwitch, boolean isOn) {
-//                    // Implement your switching logic here
-//
-//                    if (!isOn) {
-//                        loadotherdata();
-////                        showdatainarabic();
-//                    } else {
-//                        showdatainarabic();
-//
-//                    }
-//                }
-//            });
-
-
-//            if (toggle2) {
-//
-//                showdatainarabic();
-//                swToggle.setOn(true);
-//            } else {
-//                loadotherdata();
-//                swToggle.setOn(false);
-////            swToggle.(true);
-////            swToggle.setLabelOn("EN");
-//
-//            }
-
-
-//        image = findViewById(R.id.image);
-
 
             items = new ArrayList<>();
             items2 = new ArrayList<>();
-
-//        pDialog = Utilss.showSweetLoader(Product_Detail.this, SweetAlertDialog.PROGRESS_TYPE, "Fetching Data...");
-
             recyclerView = (RecyclerView) findViewById(R.id.recycler_view);
             LocalBroadcastManager.getInstance(this).registerReceiver(mMessageReceiver, new IntentFilter("custom-message"));
 
@@ -360,16 +243,6 @@ public class Product_Detail extends BaseActivity implements DroidListener {
             viewPager = (ViewPager) findViewById(R.id.viewPager);
             ViewPagerAdapter viewPagerAdapter = new ViewPagerAdapter(Product_Detail.this, items2);
             viewPager.setAdapter(viewPagerAdapter);
-
-//            SnapHelper snapHelper = new GravitySnapHelper(Gravity.START);
-//            snapHelper.attachToRecyclerView(recyclerView);
-//
-//            recyclerView.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false));
-//            recyclerView.setHasFixedSize(true);
-//
-//            adapter = new SnapRecyclerAdapter_Details(Product_Detail.this, items);
-//            adapter.setDataList(items);
-//            recyclerView.setAdapter(adapter);
 
             GridLayoutManager mGridLayoutManager = new GridLayoutManager(Product_Detail.this, 2);
             int spanCount = 2; // 3 columns
@@ -500,8 +373,6 @@ public class Product_Detail extends BaseActivity implements DroidListener {
 
 
                                                     items.add(dataObject);
-//                                adapter.notifyDataSetChanged();
-
                                                     runOnUiThread(new Runnable() {
                                                         @Override
                                                         public void run() {
@@ -768,23 +639,10 @@ public class Product_Detail extends BaseActivity implements DroidListener {
 
     private void loadotherdatawithcard()
     {
-
-
-
-
     }
-
-//    private void showdatainenglishdata()
-//    {
-//
-//    }
-
 
 
     public void onBackPressed() {
-//        Intent intent = new Intent(Product_Detail.this, ProductsActivity.class);
-//        finish();
-//        startActivity(intent);
     }
 
 
@@ -879,8 +737,6 @@ public class Product_Detail extends BaseActivity implements DroidListener {
 
 
                                                     items.add(dataObject);
-//                                adapter.notifyDataSetChanged();
-
                                                     runOnUiThread(new Runnable() {
                                                         @Override
                                                         public void run() {
@@ -972,27 +828,9 @@ public class Product_Detail extends BaseActivity implements DroidListener {
                 headers.put("Authorization", MainActivity.value2);
                 return headers;
             }
-
-
-//            @Override
-//            protected Response<String> parseNetworkResponse(NetworkResponse response) {
-//                statusCode = String.valueOf(response.statusCode);
-//                Log.d("StatusCode3", statusCode);
-//                //Handling logic
-//                return super.parseNetworkResponse(response);
-//            }
-
         };
         queue.add(stringRequest);
     }
-
-
-
-
-
-
-
-
 
     public BroadcastReceiver mMessageReceiver = new BroadcastReceiver() {
         @Override
@@ -1036,8 +874,6 @@ public class Product_Detail extends BaseActivity implements DroidListener {
                                 textView_3.setText(text3);
                                 textView_34.setText(text5);
 
-//                            textView_34.setText(Category_Nam);
-
                                 runOnUiThread(new Runnable() {
                                     @Override
                                     public void run() {
@@ -1078,15 +914,6 @@ public class Product_Detail extends BaseActivity implements DroidListener {
 
                 }
 
-
-
-
-
-
-
-
-
-// && toggle2
                 else if (!Value_Feedback.swToggle.isOn())
                 {
 
@@ -1116,8 +943,6 @@ public class Product_Detail extends BaseActivity implements DroidListener {
 
                                 textView_34.setText(text4);
 
-//                            textView_34.setText(Category_Nam);
-
                                 runOnUiThread(new Runnable() {
                                     @Override
                                     public void run() {
@@ -1157,9 +982,6 @@ public class Product_Detail extends BaseActivity implements DroidListener {
                     queue.add(stringRequest);
 
                 }
-
-
-
             }
         }
     };
@@ -1250,7 +1072,6 @@ public class Product_Detail extends BaseActivity implements DroidListener {
 
 
                                                 items.add(dataObject);
-//                                adapter.notifyDataSetChanged();
 
                                                 runOnUiThread(new Runnable() {
                                                     @Override
@@ -1344,12 +1165,8 @@ public class Product_Detail extends BaseActivity implements DroidListener {
 
         if (isConnected) {
             //do Stuff with internet
-//            netIsOn();
         } else {
             //no internet
-
-//            Toast.makeText(this, "Internet Off..!!", Toast.LENGTH_SHORT).show();
-
             SweetAlertDialog pDialog = new SweetAlertDialog(Product_Detail.this, SweetAlertDialog.ERROR_TYPE).setConfirmButton("OK" , new SweetAlertDialog.OnSweetClickListener() {
                 @Override
                 public void onClick(SweetAlertDialog sweetAlertDialog) {

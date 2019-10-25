@@ -46,12 +46,6 @@ public class SnapRecyclerAdapter2 extends RecyclerView.Adapter<SnapRecyclerAdapt
         holder.appName.setText(item.getProduct());
         Log.d("Item_Price", ""+item.getPrice());
 
-//        String value= item.getPrice();
-//        float d=Float.parseFloat(value);
-//        Log.d("Item_Price22", ""+d);
-
-
-//        "AED : %.2f", item.getPrice()
         holder.app_name2.setText(String.format("درهم : %.2f", item.getPrice()));
 
 
@@ -60,19 +54,9 @@ public class SnapRecyclerAdapter2 extends RecyclerView.Adapter<SnapRecyclerAdapt
             public void onClick(View v) {
 
                 Intent intent =new Intent(context , Product_Detail.class);
-
-
-//                boolean l2 =ProductsActivity.swToggle.isOn();
-//                Log.d("ValueOfBool2" , ""+l2);
-//                intent.putExtra("ValueBool2" ,l2);
-
                 intent.putExtra("Category_Id" , item.getID());
                 intent.putExtra("Category_name" , item.getCategory());
                 context.startActivity(intent);
-
-//                ((Activity) context).finish();
-
-
             }
         });
     }

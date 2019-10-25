@@ -61,20 +61,14 @@ public class Main_MenuScreen extends BaseActivity implements DroidListener {
     RecyclerView mRecyclerView;
     ArrayList<MainCategories_Pojo> mFlowerList;
     ArrayList<MainCategories_Pojo> mFlowerList5;
-
     protected SweetAlertDialog pDialog;
     String token;
     TextView  textview;
     ArrayList<MainCategories_Pojo> mFlowerList2;
     String statusCode;
-
     ArrayList<MainCategories_Pojo> mFlowerList3;
 
-    //    FlowerData mFlowerData;
     Main_Manu_Adapter dataListAdapter;
-//    Main_Manu_Adapter2 dataListAdapter2;
-
-//    public static LabeledSwitch swToggle;
     DroidNet mDroidNet;
     int orientation;
     boolean bool_values,bool_value2;
@@ -82,18 +76,9 @@ public class Main_MenuScreen extends BaseActivity implements DroidListener {
 
     Button imageView4,imageView45;
 
-//    SwipeRefreshLayout mSwipeRefreshLayout;
-
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-//        setContentView(R.layout.activity_main__menu_screen);
-
-//        swToggle = findViewById(R.id.iv_toggle);
-
-
 
         if (MainActivity.orientation==Configuration.ORIENTATION_PORTRAIT)
         {
@@ -105,14 +90,9 @@ public class Main_MenuScreen extends BaseActivity implements DroidListener {
             mDroidNet = DroidNet.getInstance();
             mDroidNet.addInternetConnectivityListener(this);
 
-//            bool_value = getIntent().getBooleanExtra("Toggle_Value_Back",false);
-//            Log.d("bool_value" , ""+bool_value);
-
-
             mFlowerList = new ArrayList<>();
             mFlowerList2 = new ArrayList<>();
             mFlowerList3 = new ArrayList<>();
-
 
             imageView4 = findViewById(R.id.imageView4);
             imageView45 = findViewById(R.id.imageView45);
@@ -137,16 +117,9 @@ public class Main_MenuScreen extends BaseActivity implements DroidListener {
 
                     Intent intent =new Intent(Main_MenuScreen.this , Value_Feedback.class);
                     startActivity(intent);
-//                    finish();
                 }
             });
 
-
-
-//            swToggle = findViewById(R.id.iv_toggle);
-
-
-//        final CircleProgressBar circleProgressBar = (CircleProgressBar) rootView.findViewById(R.id.custom_progressBar);
             mRecyclerView = findViewById(R.id.recyclerview);
             mRecyclerView.setHasFixedSize(true);
 
@@ -164,47 +137,11 @@ public class Main_MenuScreen extends BaseActivity implements DroidListener {
 
 
             textview = (TextView )findViewById(R.id.textView123);
-//        mSwipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
-//            @Override
-//            public void onRefresh() {
-//                updatemenu();
-//            }
-//        });
-
-
-//            if (bool_value)    //if true
-//            {
-//                showdatainarabicportrait();
-//                swToggle.setOn(true);
-//            }
-//
-//            else         //false
-//            {
-//                retreiveCategoriesinenglishportrait();
-//            }
-//
-//
-//            swToggle.setOnToggledListener(new OnToggledListener() {
-//                @Override
-//                public void onSwitched(LabeledSwitch labeledSwitch, boolean isOn) {
-//                    // Implement your switching logic here
-//
-//                    if (isOn)
-//                    {
-//                        showdatainarabicportrait();
-//                    } else {
-//
-//                        retreiveCategoriesinenglishportrait();
-//                    }
-//                }
-//
-//            });
         }
 
 else
         {
             this.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
-
             //landscape
             setContentView(R.layout.activity_main__menu_screen_landscape);
 
@@ -242,15 +179,8 @@ else
                 }
             });
 
-
-
-//            swToggle = findViewById(R.id.iv_toggle);
-
-
-//        final CircleProgressBar circleProgressBar = (CircleProgressBar) rootView.findViewById(R.id.custom_progressBar);
             mRecyclerView = findViewById(R.id.recyclerview);
             mRecyclerView.setHasFixedSize(true);
-
 
             dataListAdapter = new Main_Manu_Adapter(Main_MenuScreen.this, mFlowerList);
             dataListAdapter.setDataList(mFlowerList);
@@ -265,26 +195,6 @@ else
 
 
             textview = (TextView )findViewById(R.id.textView123);
-//        mSwipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
-//            @Override
-//            public void onRefresh() {
-//                updatemenu();
-//            }
-//        });
-
-
-//            if (bool_value)    //if true
-//            {
-//                showdatainarabiclandscape();
-////                swToggle.setOn(true);
-//            }
-//
-//            else         //false
-//            {
-//                retreiveCategoriesinenglishlandscape();
-//            }
-
-
 
             if (Value_Feedback.swToggle.isOn())
             {
@@ -297,36 +207,7 @@ else
                 imageView4.setText("Home");
                 retreiveCategoriesinenglishlandscape();
             }
-
-
-
-
-//            swToggle.setOnToggledListener(new OnToggledListener() {
-//                @Override
-//                public void onSwitched(LabeledSwitch labeledSwitch, boolean isOn) {
-//                    // Implement your switching logic here
-//
-//
-//                }
-//
-//            });
         }
-
-//        int currentOrientation = this.getResources().getConfiguration().orientation;
-//
-//        if (currentOrientation == Configuration.ORIENTATION_PORTRAIT)
-//        {
-//
-//
-//
-//
-//        }
-//
-//
-//        else
-//        {
-//
-//        }
     }
 
 
@@ -369,7 +250,6 @@ else
 
     @Override
     public void onConfigurationChanged(Configuration newConfig) {
-//        setContentView(R.layout.activity_main__menu_screens2);
         super.onConfigurationChanged(newConfig);
 
     }
@@ -380,8 +260,6 @@ else
     protected void onSaveInstanceState (Bundle outState) {
 
         super.onSaveInstanceState(outState);
-//        outState.putBoolean("toggle_state", swToggle.isOn());
-//        Log.d("MyValuesss" , "Imhere" + "" +  swToggle.isOn());
     }
     //
 //
@@ -389,265 +267,7 @@ else
     protected void onRestoreInstanceState(@NonNull Bundle savedInstanceState)
     {
         super.onRestoreInstanceState(savedInstanceState);
-
-//        boolean myBoolean = savedInstanceState.getBoolean("toggle_state");
-//        Log.d("MyValueee", "" + myBoolean);
-//        swToggle.setOn(myBoolean);
     }
-
-
-//
-//        if (myBoolean && orientation==Configuration.ORIENTATION_LANDSCAPE )
-//        {
-//            showdatainarabiclandscape();
-////            swToggle.setOn(myBoolean);
-//        }
-//
-//        else
-//        {
-//
-//        }
-//
-//
-//
-//         if (myBoolean && orientation==Configuration.ORIENTATION_PORTRAIT) {
-//
-//
-//            showdatainarabicportrait();
-////            swToggle.setOn(myBoolean);
-//        }
-//
-//         else
-//         {
-//
-//         }
-//
-//
-//          if (!myBoolean && orientation==Configuration.ORIENTATION_PORTRAIT)
-//        {
-//            retreiveCategoriesinenglishportrait();
-////            swToggle.setOn(myBoolean);
-//        }
-//
-//          else
-//          {
-//
-//          }
-//
-//
-//         if (!myBoolean && orientation==Configuration.ORIENTATION_LANDSCAPE)
-//        {
-//            retreiveCategoriesinenglishlandscape();
-//
-//        }
-//
-//
-//         else
-//         {
-//
-//         }
-//
-//
-//
-//
-//    }
-//
-
-
-//    @Override
-//    public void onConfigurationChanged(@NonNull Configuration newConfig) {
-//
-//        super.onConfigurationChanged(newConfig);
-//        if (newConfig.orientation == Configuration.ORIENTATION_LANDSCAPE)
-//        {
-//           setContentView(R.layout.activity_main__menu_screens2);
-//
-//
-//            mDroidNet = DroidNet.getInstance();
-//            mDroidNet.addInternetConnectivityListener(this);
-//
-//            bool_value = getIntent().getBooleanExtra("Toggle_Value_Back",false);
-//            Log.d("bool_value" , ""+bool_value);
-//
-//
-//
-//
-//            mFlowerList = new ArrayList<>();
-//            mFlowerList2 = new ArrayList<>();
-//            mFlowerList3 = new ArrayList<>();
-//
-//
-//            imageView4 = findViewById(R.id.imageView4);
-//
-//
-//            imageView4.setOnClickListener(new View.OnClickListener() {
-//                @Override
-//                public void onClick(View v) {
-//
-//                    Intent intent =new Intent(Main_MenuScreen.this , Value_Feedback.class);
-//                    startActivity(intent);
-//                    finish();
-//                }
-//            });
-//
-//
-//
-//
-//            swToggle = findViewById(R.id.iv_toggle);
-//
-//
-////        final CircleProgressBar circleProgressBar = (CircleProgressBar) rootView.findViewById(R.id.custom_progressBar);
-//            mRecyclerView = findViewById(R.id.recyclerview);
-//            mRecyclerView.setHasFixedSize(true);
-//
-//
-//            dataListAdapter = new Main_Manu_Adapter(Main_MenuScreen.this, mFlowerList);
-//            dataListAdapter.setDataList(mFlowerList);
-//
-//
-//            int spanCount = 4; // 3 columns
-//            int spacing = 20; // 50px
-//            boolean includeEdge = false;
-//            mRecyclerView.addItemDecoration(new ItemOffsetDecoration(spanCount, spacing, includeEdge));
-//            mRecyclerView.setLayoutManager(mGridLayoutManager);
-//            mRecyclerView.setAdapter(dataListAdapter);
-//
-//
-//            textview = (TextView )findViewById(R.id.textView123);
-////        mSwipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
-////            @Override
-////            public void onRefresh() {
-////                updatemenu();
-////            }
-////        });
-//
-//
-//            if (bool_value)    //if true
-//            {
-//                showdatainarabiclandscape();
-//                swToggle.setOn(true);
-//            }
-//
-//            else         //false
-//            {
-//                retreiveCategoriesinenglishlandscape();
-//            }
-//
-//
-//            swToggle.setOnToggledListener(new OnToggledListener() {
-//                @Override
-//                public void onSwitched(LabeledSwitch labeledSwitch, boolean isOn) {
-//                    // Implement your switching logic here
-//
-//                    if (isOn)
-//                    {
-//                        showdatainarabiclandscape();
-//                    } else {
-//
-//                        retreiveCategoriesinenglishlandscape(); //                        retreiveCategoriesinenglishlandscape();
-//                    }
-//                }
-//
-//            });
-//
-//
-//        }
-//
-//        else if (newConfig.orientation == Configuration.ORIENTATION_PORTRAIT)
-//        {
-//            setContentView(R.layout.activity_main__menu_screen);
-//
-//            mDroidNet = DroidNet.getInstance();
-//            mDroidNet.addInternetConnectivityListener(this);
-//
-//            bool_value = getIntent().getBooleanExtra("Toggle_Value_Back",false);
-//            Log.d("bool_value" , ""+bool_value);
-//
-//
-//            mFlowerList = new ArrayList<>();
-//            mFlowerList2 = new ArrayList<>();
-//            mFlowerList3 = new ArrayList<>();
-//
-//
-//            imageView4 = findViewById(R.id.imageView4);
-//
-//
-//            imageView4.setOnClickListener(new View.OnClickListener() {
-//                @Override
-//                public void onClick(View v) {
-//
-//                    Intent intent =new Intent(Main_MenuScreen.this , Value_Feedback.class);
-//                    startActivity(intent);
-//                    finish();
-//                }
-//            });
-//
-//
-//
-//
-//            swToggle = findViewById(R.id.iv_toggle);
-//
-//
-////        final CircleProgressBar circleProgressBar = (CircleProgressBar) rootView.findViewById(R.id.custom_progressBar);
-//            mRecyclerView = findViewById(R.id.recyclerview);
-//            mRecyclerView.setHasFixedSize(true);
-//
-//
-//            dataListAdapter = new Main_Manu_Adapter(Main_MenuScreen.this, mFlowerList);
-//            dataListAdapter.setDataList(mFlowerList);
-//
-//
-//            int spanCount = 2; // 3 columns
-//            int spacing = 20; // 50px
-//            boolean includeEdge = false;
-//            mRecyclerView.addItemDecoration(new ItemOffsetDecoration(spanCount, spacing, includeEdge));
-//            mRecyclerView.setLayoutManager(mGridLayoutManager);
-//            mRecyclerView.setAdapter(dataListAdapter);
-//
-//
-//            textview = (TextView )findViewById(R.id.textView123);
-////        mSwipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
-////            @Override
-////            public void onRefresh() {
-////                updatemenu();
-////            }
-////        });
-//
-//
-//            if (bool_value)    //if true
-//            {
-//                showdatainarabicportrait();
-//                swToggle.setOn(true);
-//            }
-//
-//            else         //false
-//            {
-//                retreiveCategoriesinenglishportrait();
-//            }
-//
-//
-//            swToggle.setOnToggledListener(new OnToggledListener() {
-//                @Override
-//                public void onSwitched(LabeledSwitch labeledSwitch, boolean isOn) {
-//                    // Implement your switching logic here
-//
-//                    if (isOn)
-//                    {
-//                        showdatainarabicportrait();
-//                    } else {
-//
-//                        retreiveCategoriesinenglishportrait();
-////                        retreiveCategoriesinenglishlandscape();
-//                    }
-//                }
-//
-//            });
-//
-//        }
-//    }
-
-
-
 
     private void showdatainarabicportrait()
     {
@@ -871,12 +491,6 @@ else
                             mRecyclerView.setLayoutManager(mGridLayoutManager);
                             mRecyclerView.setAdapter(dataListAdapter);
                         }
-
-//                            mFlowerList.clear();
-
-
-
-
                     } catch (JSONException e) {
                         e.printStackTrace();
                     }
@@ -1082,25 +696,8 @@ else
 
 
     public void onBackPressed() {
-//        Intent intent = new Intent(Main_MenuScreen.this, Value_Feedback.class);
-//        startActivity(intent);
+
     }
-
-
-//    @Override
-//    public void onConfigurationChanged(@NonNull Configuration newConfig) {
-//        super.onConfigurationChanged(newConfig);
-//
-//        if(getResources().getConfiguration().orientation == Configuration.ORIENTATION_PORTRAIT){
-//            mRecyclerView.setLayoutManager(new GridLayoutManager(Main_MenuScreen.this, 2));
-//        }
-//        else{
-//            mRecyclerView.setLayoutManager(new GridLayoutManager(Main_MenuScreen.this, 4));
-//        }
-//    }
-
-
-
 
     private void retreiveCategoriesinenglishlandscape()
     {
@@ -1163,8 +760,6 @@ else
                                             }
 
                                         });
-
-
                                     }
 
                                     dataListAdapter = new Main_Manu_Adapter(Main_MenuScreen.this, mFlowerList3);
@@ -1257,12 +852,9 @@ else
     public void onInternetConnectivityChanged(boolean isConnected) {
 
         if (isConnected) {
-            //do Stuff with internet
 //            netIsOn();
         } else {
-            //no internet
 
-//            Toast.makeText(this, "Internet Off..!!", Toast.LENGTH_SHORT).show();
 
             SweetAlertDialog pDialog = new SweetAlertDialog(Main_MenuScreen.this, SweetAlertDialog.ERROR_TYPE).setConfirmButton("OK" , new SweetAlertDialog.OnSweetClickListener() {
                 @Override

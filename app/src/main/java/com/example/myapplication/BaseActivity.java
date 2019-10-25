@@ -22,8 +22,6 @@ public class BaseActivity extends AppCompatActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         this.context = this;
-
-//        LogUtil.e(TAG, "FCM ID " + FirebaseInstanceId.getInstance().getToken());
         progressDialog = new ProgressDialog(this);
         progressDialog.setMessage("Please wait...");
         progressDialog.setCancelable(false);
@@ -32,8 +30,6 @@ public class BaseActivity extends AppCompatActivity {
     @Override
     protected void onStart() {
         super.onStart();
-//        LogUtil.e(TAG, "BaseActivity onStart");
-
     }
 
     @Override

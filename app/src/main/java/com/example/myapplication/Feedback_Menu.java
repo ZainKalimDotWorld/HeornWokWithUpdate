@@ -66,10 +66,6 @@ public class Feedback_Menu extends AppCompatActivity {
 
         super.onCreate(savedInstanceState);
 
-
-
-
-
         if (MainActivity.orientation==Configuration.ORIENTATION_PORTRAIT)
         {
             this.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
@@ -80,33 +76,11 @@ public class Feedback_Menu extends AppCompatActivity {
             customer_info = findViewById(R.id.customer_info);
             customer_info2 = findViewById(R.id.customer_info2);
 
-//        customer_info.setHint("Email Address");
-//        customer_info2.setHint("Contact Number");
-
             home=findViewById(R.id.home);
             next=findViewById(R.id.next);
 
 
             textView= findViewById(R.id.textView);
-
-//            swToggle = findViewById(R.id.iv_toggle);
-
-//            swToggle.setOnToggledListener(new OnToggledListener() {
-//                @Override
-//                public void onSwitched(LabeledSwitch labeledSwitch, boolean isOn) {
-//                    // Implement your switching logic here
-//
-//                    if (isOn)
-//                    {
-//                        showdatainarabic();
-//                    } else {
-//                        showdatainenglish();
-//                    }
-//                }
-//
-//            });
-//
-
 
             home.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -146,25 +120,10 @@ public class Feedback_Menu extends AppCompatActivity {
                         return;
                     }
 
-//                email_validation.matches(emailPattern) &&
-
                     else if (email_validation.length() >0 && contact_validation.length() >0)
                     {
                         customer_info.setText("");
                         customer_info2.setText("");
-
-
-//                        if (swToggle.isOn())
-//                        {
-//                            loadServeyinarabic();
-//                        }
-//
-//                        else
-//                        {
-//                            loadServeyinenglish();
-//
-//                        }
-
                     }
 
                     else
@@ -192,9 +151,6 @@ public class Feedback_Menu extends AppCompatActivity {
 
 
             textView= findViewById(R.id.textView);
-
-//            swToggle = findViewById(R.id.iv_toggle);
-
 
 
             if (Value_Feedback.swToggle.isOn())
@@ -245,8 +201,6 @@ public class Feedback_Menu extends AppCompatActivity {
                         return;
                     }
 
-//                email_validation.matches(emailPattern) &&
-
                     else if (email_validation.length() >0 && contact_validation.length() >0)
                     {
                         customer_info.setText("");
@@ -268,145 +222,16 @@ public class Feedback_Menu extends AppCompatActivity {
 
                     else
                     {
-//                    SweetAlertDialog pDialog = new SweetAlertDialog(Feedback_Menu.this, SweetAlertDialog.ERROR_TYPE);
-//                    pDialog.getProgressHelper().setBarColor(Color.parseColor("#A5DC86"));
-//                    pDialog.setTitleText("Enter Correct Email Format..!!");
-//                    pDialog.setCancelable(true);
-//                    pDialog.show();
-//                    return;
+
                     }
                 }
             });
         }
-
-
-//        Window window = this.getWindow();
-//// clear FLAG_TRANSLUCENT_STATUS flag:
-//        window.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
-//// add FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS flag to the window
-//        window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
-//// finally change the color
-//        window.setStatusBarColor(ContextCompat.getColor(Feedback_Menu.this,R.color.colorback));
-//
-//
-//        customer_info = findViewById(R.id.customer_info);
-//        customer_info2 = findViewById(R.id.customer_info2);
-//
-////        customer_info.setHint("Email Address");
-////        customer_info2.setHint("Contact Number");
-//
-//        home=findViewById(R.id.home);
-//        next=findViewById(R.id.next);
-//
-//
-//        textView= findViewById(R.id.textView);
-//
-//        swToggle = findViewById(R.id.iv_toggle);
-//
-//
-////        customer_info.setHint("Email Address");
-////        customer_info2.setHint("Contact Number");
-//
-//        swToggle.setOnToggledListener(new OnToggledListener() {
-//            @Override
-//            public void onSwitched(LabeledSwitch labeledSwitch, boolean isOn) {
-//                // Implement your switching logic here
-//
-//                if (isOn)
-//                {
-//                    showdatainarabic();
-//                } else {
-//                    showdatainenglish();
-//                }
-//            }
-//
-//        });
-//
-//
-//
-//        home.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//
-//
-//                Intent intent = new Intent( Feedback_Menu.this , Value_Feedback.class);
-//                startActivity(intent);
-//            }
-//        });
-//
-//
-//        next.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//
-//                email_validation = customer_info.getText().toString();
-//                contact_validation = customer_info2.getText().toString();
-//
-//                if (email_validation.equals("") && contact_validation.equals(""))
-//                {
-//                    SweetAlertDialog pDialog = new SweetAlertDialog(Feedback_Menu.this, SweetAlertDialog.ERROR_TYPE);
-//                    pDialog.getProgressHelper().setBarColor(Color.parseColor("#A5DC86"));
-//                    pDialog.setTitleText("Please fill form properly..!!");
-//                    pDialog.setCancelable(true);
-//                    pDialog.show();
-//                    return;
-//                }
-//
-//                else if (contact_validation.equals(""))
-//                {
-//                    SweetAlertDialog pDialog = new SweetAlertDialog(Feedback_Menu.this, SweetAlertDialog.ERROR_TYPE);
-//                    pDialog.getProgressHelper().setBarColor(Color.parseColor("#A5DC86"));
-//                    pDialog.setTitleText("Contact Number Is Required..!!");
-//                    pDialog.setCancelable(true);
-//                    pDialog.show();
-//                    return;
-//                }
-//
-////                email_validation.matches(emailPattern) &&
-//
-//                else if (email_validation.length() >0 && contact_validation.length() >0)
-//                {
-//                    customer_info.setText("");
-//                    customer_info2.setText("");
-//
-//
-//                    if (swToggle.isOn())
-//                    {
-//                        loadServeyinarabic();
-//                    }
-//
-//                    else
-//                    {
-//                        loadServeyinenglish();
-//
-//                    }
-//
-//                }
-//
-//                else
-//                {
-//
-//                }
-//            }
-//        });
     }
 
-//
-//    @Override
-//    protected void onSaveInstanceState (Bundle outState) {
-//        super.onSaveInstanceState(outState);
-//        outState.putString("userName", customer_info.getText().toString());
-//        outState.putString("password", customer_info2.getText().toString());
-//
-//        outState.putBoolean("toggle_state", swToggle.isOn());
-//
-//
-//        Log.d("MyValuesss" , "Imhere" + "" +  swToggle.isOn());
-//    }
 
     @Override
     public void onConfigurationChanged(Configuration newConfig) {
-//        setContentView(R.layout.activity_main__menu_screens2);
         super.onConfigurationChanged(newConfig);
     }
 
@@ -466,11 +291,6 @@ public class Feedback_Menu extends AppCompatActivity {
                     i.putExtra("token", MainActivity.value2);
                     i.putExtra("email", email_validation);
                     i.putExtra("phone", contact_validation);
-
-//                    i.putExtra("Toggle_State" , ""+swToggle.isOn());
-//                    Log.d("My_Toggle_State2" , ""+swToggle.isOn());
-
-
 
                     startActivity(i);
 
@@ -544,10 +364,6 @@ public class Feedback_Menu extends AppCompatActivity {
                     i.putExtra("token", MainActivity.value2);
                     i.putExtra("email", email_validation);
                     i.putExtra("phone", contact_validation);
-//i.putExtra("Toggle_State" , ""+swToggle.isOn());
-//Log.d("My_Toggle_State1" , ""+swToggle.isOn());
-
-
                     startActivity(i);
 
                     runOnUiThread(new Runnable() {
@@ -601,12 +417,9 @@ public class Feedback_Menu extends AppCompatActivity {
         textView.setText("We value your feedback!");
         customer_info.setHint("Email Address");
         customer_info.setTextDirection(View.TEXT_DIRECTION_LTR);
-//        customer_info.setInputType(InputType.TYPE_TEXT_VARIATION_EMAIL_ADDRESS);
         customer_info2.setHint("Contact Number");
         customer_info2.setTextDirection(View.TEXT_DIRECTION_LTR);
 
-        //        customer_info2.setInputType(InputType.TYPE_CLASS_PHONE);
-//        customer_info2.setTextDirection(View.TEXT_DIRECTION_FIRST_STRONG_LTR);
         home.setText("HOME");
         next.setText("NEXT");
     }
@@ -617,12 +430,8 @@ public class Feedback_Menu extends AppCompatActivity {
 
         customer_info.setHint("البريد الإلكتروني");
         customer_info.setTextDirection(View.TEXT_DIRECTION_RTL);
-//        customer_info.setInputType(InputType.TYPE_TEXT_VARIATION_EMAIL_ADDRESS);
         customer_info2.setHint("رقم التواصل");
         customer_info2.setTextDirection(View.TEXT_DIRECTION_RTL);
-
-//        customer_info2.setTextDirection(View.TEXT_DIRECTION_ANY_RTL);
-//        customer_info2.setInputType(InputType.TYPE_CLASS_PHONE);
         home.setText("الصفحة الرئيسية");
         next.setText("التالى");
     }
@@ -638,19 +447,6 @@ public class Feedback_Menu extends AppCompatActivity {
     }
 
     public void onBackPressed() {
-//        Intent intent = new Intent(Product_Detail.this, ProductsActivity.class);
-//        finish();
-//        startActivity(intent);
-    }
-
-    public void  loadServey()
-    {
 
     }
-
-
-
-
-
-
 }
